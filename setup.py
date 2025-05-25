@@ -13,7 +13,7 @@ def read_long_description():
 
 setup(
     name="ebay_lister_pkg",  # Replace with your desired package name on PyPI if you publish
-    version="0.1.0",
+    version="0.1.1",
     author="Ole von Klitzing",  # Replace with your name
     author_email="ovonklit@uni-bremen.de",  # Replace with your email
     description="A package to list auto parts on eBay, with EPER integration and GUI.",

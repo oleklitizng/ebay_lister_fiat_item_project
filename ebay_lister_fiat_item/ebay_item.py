@@ -202,12 +202,7 @@ class EBAYHandler:
         if manufacturer_override:
             manufacturer = manufacturer_override #
         else:
-            # EPERHandler.data enthält keinen 'manufacturer_name'.
-            # .get() wird hier None zurückgeben, was von der bestehenden Logik gehandhabt wird.
-            manufacturer = eper_item.data.get("manufacturer_name") # Sicherer Zugriff über .data.get()
-            if not manufacturer:
-                logging.warning(f"Manufacturer not found via EPERHandler for {part_number_str}. Setting to 'Nicht angegeben'.") #
-                manufacturer = "Nicht angegeben" # Fallback in Deutsch
+            manufacturer_override = 'Fiat' # Standardwert, falls kein Override
 
         if not all([title, description, final_price_str, part_number_specific]):
             missing_fields = [ #
