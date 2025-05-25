@@ -202,10 +202,10 @@ class EBAYHandler:
             raise ValueError(f"EPERHandler could not be initialized for part number {part_number_str}. Error: {e}")
 
 
-        title = title_override if title_override else eper_item.get_item("title")
-        description = description_override if description_override else eper_item.get_item("title_base_description")
-        final_price_str = eper_item.get_item("eper_price_str")
-        part_number_specific = eper_item.get_item("part_number")
+        title = title_override if title_override else eper_item.data.get_item("title")
+        description = description_override if description_override else eper_item.data.get_item("title_base_description")
+        final_price_str = eper_item.data.get_item("eper_price_str")
+        part_number_specific = eper_item.data.get_item("part_number")
 
         if not final_price_str:
             raise ValueError(f"EPER Price (eper_price_str) is missing for part number {part_number_str}.")
@@ -216,7 +216,7 @@ class EBAYHandler:
             raise ValueError(f"Invalid price format '{final_price_str}' for part number {part_number_str}. Must be a number.")
 
 
-        comparison_numbers_list = eper_item.get_item("final_output_comparison_numbers")
+        comparison_numbers_list = eper_item.data.get_item("final_output_comparison_numbers")
         if not isinstance(comparison_numbers_list, list):
             comparison_numbers_list = [str(comparison_numbers_list)] if comparison_numbers_list else []
 
@@ -225,7 +225,7 @@ class EBAYHandler:
         if manufacturer_override:
             manufacturer = manufacturer_override
         else:
-            manufacturer = eper_item.get_item("manufacturer_name")
+            manufacturer = eper_item.data.get_item("manufacturer_name")
             if not manufacturer:
                 logging.warning(f"Manufacturer not found via EPERHandler for {part_number_str}. Setting to 'Nicht angegeben'.")
                 manufacturer = "Nicht angegeben" # Fallback in Deutsch
