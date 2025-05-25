@@ -14,16 +14,13 @@ def read_long_description():
 setup(
     name="ebay_lister_pkg",  # Replace with your desired package name on PyPI if you publish
     version="0.1.0",
-    author="Your Name",  # Replace with your name
-    author_email="your.email@example.com",  # Replace with your email
+    author="Ole von Klitzing",  # Replace with your name
+    author_email="ovonklit@uni-bremen.de",  # Replace with your email
     description="A package to list auto parts on eBay, with EPER integration and GUI.",
     long_description=read_long_description(),
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/ebay_lister_project",  # Replace with your project's URL
-    packages=find_packages(where=".", include=['ebay_lister', 'ebay_lister.*']),
-    # if your package 'ebay_lister' was in a 'src' folder:
-    # package_dir={'': 'src'},
-    # packages=find_packages(where='src'),
+    url="https://github.com/yourusername/ebay_lister_fiat_item_project",  # Replace with your project's URL
+    packages=find_packages(where=".", include=['ebay_lister_fiat_item', 'ebay_lister_fiat_item.*']),
     classifiers=[
         "Development Status :: 3 - Alpha", # Or "4 - Beta", "5 - Production/Stable"
         "Intended Audience :: Developers",
@@ -68,8 +65,8 @@ setup(
         ],
     },
     project_urls={ # Optional
-        "Bug Tracker": "https://github.com/yourusername/ebay_lister_project/issues",
-        "Source Code": "https://github.com/yourusername/ebay_lister_project",
+        "Bug Tracker": "https://github.com/oleklitizng/ebay_lister_fiat_item_project/issues",
+        "Source Code": "https://github.com/oleklitizng/ebay_lister_fiat_item_project",
     },
     # include_package_data=True, # If you have non-Python files inside your package to include
     # package_data={
